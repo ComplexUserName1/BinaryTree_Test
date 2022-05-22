@@ -10,6 +10,7 @@ namespace OOO_NPK_MSA_TEST1
         int Value { get; }
     }
 
+    //реализация интерфейса узла
     class СNode : INode
     {
         public int Value { get; set; }
@@ -19,6 +20,7 @@ namespace OOO_NPK_MSA_TEST1
 
     class Tree
     {
+        //метод для заполнения дерева значениями
         public СNode insert(СNode root, int v)
         {
             if (root == null)
@@ -37,6 +39,7 @@ namespace OOO_NPK_MSA_TEST1
 
             return root;
         }
+        //метод для прохода по дереву 
         public void traverse(СNode root, int level, List<List<int>> tl)
         {
             if (root == null)
@@ -44,6 +47,7 @@ namespace OOO_NPK_MSA_TEST1
                 return;
             }
 
+            //создаём массив уровней с массивами значений
             if (tl.Count < level)
             {
                 tl.Add(new List<int> { root.Value });
@@ -71,18 +75,22 @@ namespace OOO_NPK_MSA_TEST1
 
             Random random = new Random();
 
+            //создаём массив со случайными значениями
             for (int i = 0; i < SIZE; i++)
             {
                 a[i] = random.Next(1000);
             }
 
+            //заполняем бинарное дерево значениями
             for (int i = 0; i < SIZE; i++)
             {
                 root = bst.insert(root, a[i]);
             }
 
+            //проходимся по бинарному дереву
             bst.traverse(root, level, tl);
 
+            //выводим значения уровней пользователю
             for(int i = tl.Count-1; i >= 0; i--)
             {
                 Console.WriteLine("Level " + (i+1) + ": " + string.Join(", ", tl[i]));
