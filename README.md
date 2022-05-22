@@ -17,6 +17,9 @@ int Value { get; }
 Образец выходных данных:
 
 Level 4: 24
+
 Level 3: 2, 6, 15
+
 Level 2: 5, 12
+
 Level 1: 8 
