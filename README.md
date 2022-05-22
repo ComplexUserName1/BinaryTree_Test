@@ -3,9 +3,9 @@
 ```
   interface INode
   {
-  INode Left { get; }
-  INode Right { get; }
-  int Value { get; }
+    INode Left { get; }
+    INode Right { get; }
+    int Value { get; }
   }
 ```
 Дан указатель на корневой узел (Root). Пример дерева (частный случай) дан на рисунке ниже.
